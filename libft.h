@@ -6,7 +6,7 @@
 /*   By: rhendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 11:00:48 by rhendrik          #+#    #+#             */
-/*   Updated: 2019/06/18 16:31:05 by rhendrik         ###   ########.fr       */
+/*   Updated: 2019/06/21 09:07:00 by rhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 #define INTMIN -2147483648
 #define INTMAX 2147483647
 #define MINSTR "-2147483648"

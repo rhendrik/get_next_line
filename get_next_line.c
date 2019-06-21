@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maintest.c                                         :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/20 16:11:23 by rhendrik          #+#    #+#             */
-/*   Updated: 2019/06/21 12:28:26 by rhendrik         ###   ########.fr       */
+/*   Created: 2019/06/21 08:11:07 by rhendrik          #+#    #+#             */
+/*   Updated: 2019/06/21 10:02:21 by rhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "get_next_line.h"
 
-int main(int ac, char **av)
+int getlen(const int fd, char **line)
 {
-	int fd;
-	const char *filename;
-	char *mode;
-	FILE *file;
-	int lentest;
-	char **tmpline;
+	char *s;
+	int len;
 
-	tmpline = NULL;
-	tmpline[0] = ft_strdup("This is a temporary test\n");
-	filename = av[1];
-	mode = av[2];
-	if (ac != 3)
+	s = line[fd];
+	len = 0;
+	while (*s != '\n' || *s != EOF)
 	{
-		ft_putstr("Sorry! Invalid arguments.\n <FILENAME> <MODE>\n");
-		return (0);
+		s++;
+		len++;
 	}
-	file = fopen(filename, mode);
-	fd = fileno(file);
-	lentest = getlen(0, tmpline);
-	ft_putnbr(lentest);
+	return (len);
+}
+
+int get_next_line(const int fd, char **line)
+{
+	if (fd < 0 || line == NULL)
+		return (-1);
 	return (0);
 }

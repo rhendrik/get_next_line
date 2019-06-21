@@ -6,5 +6,6 @@
 #define BUFF_SIZE 1
 
 int get_next_line(const int fd, char **line);
+int getlen(const int fd, char **line);
 
 #endif
