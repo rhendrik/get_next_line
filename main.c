@@ -6,7 +6,7 @@
 /*   By: rhendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 18:07:16 by rhendrik          #+#    #+#             */
-/*   Updated: 2019/06/24 18:19:11 by rhendrik         ###   ########.fr       */
+/*   Updated: 2019/06/27 13:23:15 by rhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-int main(int ac, char **av)
+int main(void)
 {
 	int fd;
-	(void)ac;
 	int gnl;
 	char *line;
 

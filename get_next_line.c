@@ -6,7 +6,7 @@
 /*   By: rhendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 08:11:07 by rhendrik          #+#    #+#             */
-/*   Updated: 2019/06/24 18:15:02 by rhendrik         ###   ########.fr       */
+/*   Updated: 2019/06/27 13:22:04 by rhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ int get_next_place(char **s, char **line)
 		*s = tmp;
 		if ((*s)[0] == '\0')
 			ft_strdel(s);
+		return (0);
 	}
 	else
 	{
 		*line = ft_strdup(*s);
 		ft_strdel(s);
+		return (0);
 	}
 	return (1);
 }
