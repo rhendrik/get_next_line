@@ -53,7 +53,7 @@ int output(char **s, char **line, int ret, int fd)
 int get_next_line(const int fd, char **line)
 {
 	int ret;
-	static char **s;
+	static char *s[1024];
 	char buff[BUFF_SIZE + 1];
 	char *tmp;
 
