@@ -21,9 +21,12 @@ int main(void)
 	int gnl;
 	char *line;
 
+	line = NULL;
 	fd = open("author", O_RDONLY);
-	gnl = 1;
 	gnl = get_next_line(fd, &line);
+	if (gnl == 1 || gnl == 1)
+		ft_putstr("Yaay!\n");
 	ft_putstr(line);
+	ft_putchar('\n');
 	return (0);
 }

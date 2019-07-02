@@ -6,7 +6,7 @@
 /*   By: rhendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 11:00:48 by rhendrik          #+#    #+#             */
-/*   Updated: 2019/06/21 09:07:00 by rhendrik         ###   ########.fr       */
+/*   Updated: 2019/06/23 16:06:58 by rhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 #define INTMIN -2147483648
 #define INTMAX 2147483647
 #define MINSTR "-2147483648"
@@ -77,6 +76,6 @@ char				*ft_itoa(int n);
 char				**ft_strsplit(const char *s, char c);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 void				ft_bzero(void *s, size_t n);
-void 				*ft_memrcpy(void *dest, const void *src, size_t n);
+void				*ft_memrcpy(void *dest, const void *src, size_t n);
 
 #	endif
