@@ -21,11 +21,21 @@ int has_read(char *s[255], int fd, char *buff)
 	return (1);
 }
 
+int get_len(char *s)
+{
+	int len;
+	len = 0;
+
+	while (s[len] != '\n' || s[len] != '\0')
+		len++;
+	return (len);
+}
+
 int set_str(char *s[255], char **line, char *tmp, int fd)
 {
-	/*if(!(*line = ft_strcpy(*line, s[fd])))
-		return (-1);
-	ft_strclr(s[fd]);*/
+	int len;
+
+	len = get_len(s[fd]);
 	if((tmp = ft_strchr(s[fd], '\n')) == NULL)
 	{
 		*line = ft_strdup(s[fd]);
@@ -33,10 +43,11 @@ int set_str(char *s[255], char **line, char *tmp, int fd)
 	}
 	else
 	{
+		tmp = ft_strchr(s[fd], '\n') + 1;
+		*line = ft_strsub(s[fd], 0, len);
 		free(s[fd]);
 		s[fd] = tmp;
 		free(tmp);
-		*line = s[fd];
 		return (1);
 	}
 	return (-1);
