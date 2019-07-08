@@ -1,4 +1,4 @@
-COMPILE = gcc -Wall -Werror -Wextra -g -o exe
+COMPILE = gcc -Wall -Werror -Wextra -g -o 
 SRC = $(wildcard *.c)
 
 comp:
