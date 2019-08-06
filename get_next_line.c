@@ -6,21 +6,16 @@
 /*   By: rhendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 16:45:59 by rhendrik          #+#    #+#             */
-/*   Updated: 2019/07/06 16:51:26 by rhendrik         ###   ########.fr       */
+/*   Updated: 2019/08/06 10:33:44 by rhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "get_next_line.h"
-
-/* This funtion is a helper function that calls read(2) and returns
- ** 1, 0 or -1, depending on whether or not the 
-    read has been sucessful */
 
 static int	has_read(char **s, int fd, char *buff)
 {
-	int hasread;
-	char *tmp;
+	int		hasread;
+	char	*tmp;
 
 	if ((hasread = read(fd, buff, 0)) < 0)
 		return (-1);
@@ -40,19 +35,19 @@ static int	has_read(char **s, int fd, char *buff)
 static int	get_len(char **s)
 {
 	int len;
-	len = 0;
 
-	while ((*s)[len] != '\n' &&	(*s)[len] != '\0')
+	len = 0;
+	while (((*s)[len] != '\n') && (*s)[len] != '\0')
 		len++;
 	return (len);
 }
 
 static int	set_str(char **s, char **line, char *tmp)
 {
-	int len;
+	int		len;
 	char	*tmp2;
 
-	if((tmp = ft_strchr(*s, '\n')) == NULL && *s[0] != '\0')
+	if ((tmp = ft_strchr(*s, '\n')) == NULL && *s[0] != '\0')
 	{
 		*line = ft_strdup(*s);
 		ft_strdel(s);
@@ -66,8 +61,7 @@ static int	set_str(char **s, char **line, char *tmp)
 		len = get_len(s);
 		*tmp = '\0';
 		*line = ft_strdup(*s);
-	
-		tmp2 = ft_strdup(tmp +1);
+		tmp2 = ft_strdup(tmp + 1);
 		ft_strdel(s);
 		*s = ft_strdup(tmp2);
 		ft_strdel(&tmp2);
@@ -77,9 +71,9 @@ static int	set_str(char **s, char **line, char *tmp)
 
 int			get_next_line(const int fd, char **line)
 {
-	char buff[BUFF_SIZE + 1];
-	static char *s[1024];
-	char *tmp;
+	char		buff[BUFF_SIZE + 1];
+	static char	*s[1024];
+	char		*tmp;
 
 	tmp = NULL;
 	if (!s[fd])
@@ -91,4 +85,3 @@ int			get_next_line(const int fd, char **line)
 		return (-1);
 	return (set_str(&(s[fd]), line, tmp));
 }
-
