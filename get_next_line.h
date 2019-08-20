@@ -6,7 +6,7 @@
 /*   By: rhendrik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/19 10:00:53 by rhendrik          #+#    #+#             */
-/*   Updated: 2019/08/19 11:41:17 by rhendrik         ###   ########.fr       */
+/*   Updated: 2019/08/20 11:43:41 by rhendrik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #	define GET_NEXT_LINE_H
 
 #include "libft/libft.h"
-#include <stdio.h>
-#define BUFF_SIZE 10
+#define BUFF_SIZE 1
 
 int get_next_line(const int fd, char **line);
 
